@@ -1,21 +1,7 @@
-/*
-Платформа за интерактивни истории — начална база за Microsoft SQL Server.
-Изпълнение: DBeaver > SQL Editor > Open SQL Script > Execute SQL Script.
-Необходим е работещ SQL Server и право CREATE DATABASE.
-Скриптът НЕ изтрива съществуващи данни. Спира, ако има таблици в целевата база.
-Включва Identity таблици, шест таблици за истории/напредък и три жанра.
-Няма демонстрационни пароли. Потребители се създават чрез Identity UserManager.
 
-ВАЖНО ЗА EF CORE: това е самостоятелен, ръчно подготвен SQL скрипт,
-а не генерирана миграция. Не създава __EFMigrationsHistory.
-За Code First използвайте миграциите върху ДРУГА празна база или предварително
-съгласувайте baseline. Не прилагайте InitialCreate върху тези таблици.
-Не е изпълнен срещу жив SQL Server в средата на подготовка.
-*/
 IF DB_ID(N'InteractiveStoriesDb') IS NULL
     EXEC(N'CREATE DATABASE [InteractiveStoriesDb]');
 
--- Динамичният batch задава контекста без разделител GO (удобно за DBeaver).
 EXEC(N'
 USE [InteractiveStoriesDb];
 SET XACT_ABORT ON;
