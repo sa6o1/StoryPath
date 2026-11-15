@@ -1,0 +1,26 @@
+
+# Build output
+**/bin/
+**/obj/
+
+# Editor and macOS files
+.vs/
+.idea/
+.DS_Store
+**/.DS_Store
+
+# Local secrets
+.env
+.env.*
+!.env.example
+**/secrets.json
+**/appsettings.Local.json
+
+# Test output
+TestResults/
+**/TestResults/
+
+# Database files
+*.mdf
+*.ldf
+*.bak
